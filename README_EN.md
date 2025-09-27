@@ -6,6 +6,8 @@
 
 Telegram Discussion & Feedback Group: https://t.me/eooceu
 
+video view: https://youtu.be/-FOAQmOUOYs
+
 High-performance VLESS proxy service based on Cloudflare Workers
 
 </div>
