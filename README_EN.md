@@ -2,7 +2,7 @@
 
 # CF-Workers-VLESS
 
-** [Русский](README.md) ** | **[English](README_EN.md)**
+**[Русский](README.md)** | **[English](README_EN.md)**
 
 Telegram Discussion & Feedback Group: https://t.me/eooceu
 
