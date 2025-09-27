@@ -1,69 +1,120 @@
-
-
 <div align="center">
 
 # CF-Workers-VLESS
 
-**中文** | [English](README_EN.md)
+**[Русский](#русский)** | **[English](#english)** | [中文](README.md)
 
-Telegram交流反馈群组: https://t.me/eooceu
+Группа в Telegram для обсуждений и обратной связи: https://t.me/eooceu  
 
-基于 Cloudflare Workers 的高性能 VLESS 代理服务
+Высокопроизводительный VLESS-прокси-сервис на базе Cloudflare Workers  
 
 </div>
 
-## 功能特性
+---
 
-- 🚀 基于 Cloudflare Workers 的高性能代理
-- 🔐 密码保护的主页访问
-- 📱 支持多种客户端(v2rayN,shadowrocket,loon,karing,clash,sing-box等)
-- 🌐 自动故障转移和负载均衡
-- 📊 实时连接测试和状态监控
+## Русский
 
-## 环境变量配置
+### Возможности
+- 🚀 Высокая производительность на базе Cloudflare Workers  
+- 🔐 Доступ к главной странице по паролю  
+- 📱 Поддержка множества клиентов (v2rayN, Shadowrocket, Loon, Karing, Clash, Sing-box и др.)  
+- 🌐 Автоматическое переключение при сбоях и балансировка нагрузки  
+- 📊 Тестирование соединений и мониторинг статуса в реальном времени  
+- 🎨 Современный адаптивный интерфейс  
 
-### 必需变量
+### Переменные окружения
 
-| 变量名 | 描述 | 默认值 | 示例 |
-|--------|------|--------|------|
-| `PASSWORD` | 主页访问密码 | `123456` | `your_web_password` |
+#### Обязательные
+| Переменная | Описание | По умолчанию | Пример |
+|------------|----------|--------------|--------|
+| `PASSWORD` | Пароль для доступа к главной странице | `123456` | `your_web_password` |
 
-### 可选变量
+#### Дополнительные
+| Переменная | Описание | По умолчанию | Пример |
+|------------|----------|--------------|--------|
+| `UUID` / `AUTH` / `uuid` | UUID пользователя | `5dc15e15-f285-4a9d-959b-0e4fbdd77b63` | `your-uuid-here` |
+| `PROXYIP` / `proxyip` / `proxyIP` | Список IP-адресов прокси | `13.230.34.30` | `ip1,ip2,ip3` |
+| `SUB_PATH` / `subpath` | Путь для подписки | `link` | `sub` |
 
-| 变量名 | 描述 | 默认值 | 示例 |
-|--------|------|--------|------|
-| `UUID`或`AUTH`或`uuid` | 用户UUID | `5dc15e15-f285-4a9d-959b-0e4fbdd77b63` | `your-uuid` |
-| `PROXYIP`或`proxyip`或`proxyIP` | 代理服务器IP列表 | `13.230.34.30` | `tw.tp81.netlib.re` |
-| `SUB_PATH`或`subpath` | 订阅路径 | `link` | `sub` |
+### Шаги по установке
 
-## 部署步骤
+#### Способ 1: через Cloudflare Dashboard
+1. **Вход в Cloudflare Dashboard**  
+   - Перейдите на [Cloudflare Dashboard](https://dash.cloudflare.com/)  
+   - Войдите в свой аккаунт  
 
-1. **登录 Cloudflare Dashboard**
-   - 访问 [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - 登录你的账户
+2. **Создание Worker**  
+   - Нажмите «Workers & Pages»  
+   - Нажмите «Create application»  
+   - Выберите «Create Worker»  
+   - Введите имя Worker (избегайте слов vless, proxy и т. п., рекомендуется оставить стандартное)  
 
-2. **创建 Worker**
-   - 点击 "Workers & Pages"
-   - 点击 "Create application"
-   - 选择 "Create Worker"
-   - 输入 Worker 名称(不要带vless,proxy之类的关键词，建议默认)
+3. **Загрузка кода**  
+   - Скопируйте содержимое файла `_worker.js` в редактор  
+   - Нажмите «Deploy» в правом верхнем углу  
 
-3. **上传代码**
-   - 将 `_worker.js` 文件内容复制到编辑器
-   - 点击 右上角 "Deploy"
+4. **Настройка переменных окружения**  
+   - В настройках Worker откройте «Settings» → «Variables»  
+   - Добавьте необходимые переменные окружения и привяжите собственный домен  
+   - Нажмите «Save»  
 
-4. **配置环境变量**
-   - 在 Worker 设置中找到 "Settings" → "Variables"
-   - 添加所需的环境变量并绑定自定义域名
-   - 点击 "Save"
+5. **Доступ по своему домену**  
+   - Перейдите на привязанный домен  
+   - Введите пароль для входа на главную страницу и получите ссылки для подписки  
 
-5. **访问自定义域名**
-   - 输入登录密码进入主页查看相关订阅链接
+---
 
-## 许可证
+## English
 
-## youtube video view
+### Features
+- 🚀 High-performance proxy based on Cloudflare Workers  
+- 🔐 Password-protected homepage access  
+- 📱 Support for multiple clients (v2rayN, Shadowrocket, Loon, Karing, Clash, Sing-box, etc.)  
+- 🌐 Automatic failover and load balancing  
+- 📊 Real-time connection testing and status monitoring  
+- 🎨 Modern responsive interface  
 
-https://youtu.be/-FOAQmOUOYs
+### Environment Variables
+
+#### Required
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `PASSWORD` | Homepage access password | `123456` | `your_web_password` |
+
+#### Optional
+| Variable | Description | Default | Example |
+|----------|-------------|---------|---------|
+| `UUID` / `AUTH` / `uuid` | User UUID | `5dc15e15-f285-4a9d-959b-0e4fbdd77b63` | `your-uuid-here` |
+| `PROXYIP` / `proxyip` / `proxyIP` | Proxy server IP list | `13.230.34.30` | `ip1,ip2,ip3` |
+| `SUB_PATH` / `subpath` | Subscription path | `link` | `sub` |
+
+### Deployment Steps
+
+#### Method 1: Via Cloudflare Dashboard
+1. **Login to Cloudflare Dashboard**  
+   - Visit [Cloudflare Dashboard](https://dash.cloudflare.com/)  
+   - Login to your account  
+
+2. **Create Worker**  
+   - Click "Workers & Pages"  
+   - Click "Create application"  
+   - Select "Create Worker"  
+   - Enter Worker name (avoid keywords like vless, proxy, etc., recommend using default)  
+
+3. **Upload Code**  
+   - Copy `_worker.js` file content to editor  
+   - Click "Deploy" in the top right corner  
+
+4. **Configure Environment Variables**  
+   - Find "Settings" → "Variables" in Worker settings  
+   - Add required environment variables and bind custom domain  
+   - Click "Save"  
+
+5. **Access Custom Domain**  
+   - Enter login password to access homepage and view subscription links  
+
+---
+
+## Лицензия / License
 
 GPL 2.0
