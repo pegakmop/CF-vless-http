@@ -62,4 +62,8 @@ Telegram交流反馈群组: https://t.me/eooceu
 
 ## 许可证
 
+## youtube video view
+
+https://youtu.be/-FOAQmOUOYs
+
 GPL 2.0
